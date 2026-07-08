@@ -37,9 +37,16 @@
         <a href="#support">Support</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
-      <a class="header-cta" href="https://www.kickstarter.com/" target="_blank" rel="noreferrer">
-        Kickstarter
-      </a>
+      <div class="header-actions">
+        <a class="header-cta" href="https://www.kickstarter.com/" target="_blank" rel="noreferrer">
+          Kickstarter
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" data-menu-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main id="top">
@@ -88,7 +95,7 @@
         <a href="#support">See pledge tiers</a>
       </section>
 
-      <section id="demo" class="section demo-section">
+      <section id="demo" class="section demo-section reveal">
         <div class="section-copy">
           <p class="eyebrow dark">Campaign pitch</p>
           <h2>Show the real prototype, not a fantasy promise.</h2>
@@ -106,7 +113,7 @@
         </div>
       </section>
 
-      <section id="features" class="section feature-section">
+      <section id="features" class="section feature-section reveal">
         <div class="section-heading">
           <p class="eyebrow dark">What backers help finish</p>
           <h2>A full GM desk, not another single-purpose tracker.</h2>
@@ -145,7 +152,7 @@
         </div>
       </section>
 
-      <section class="gallery" aria-label="Product screenshots">
+      <section class="gallery reveal" aria-label="Product screenshots">
         <figure class="gallery-large">
           <img src="./assets/promo_character_profile_full.png" alt="Character profile screen" />
           <figcaption>Character vault and progression</figcaption>
@@ -164,7 +171,7 @@
         </figure>
       </section>
 
-      <section id="support" class="section support-section">
+      <section id="support" class="section support-section reveal">
         <div class="support-copy">
           <p class="eyebrow">Support path</p>
           <h2>Start with coffee. Grow into Kickstarter.</h2>
@@ -201,7 +208,7 @@
         </div>
       </section>
 
-      <section id="roadmap" class="section roadmap-section">
+      <section id="roadmap" class="section roadmap-section reveal">
         <div class="section-heading">
           <p class="eyebrow dark">Roadmap for backers</p>
           <h2>A focused release promise.</h2>
@@ -227,6 +234,12 @@
       </section>
     </main>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
     <footer class="site-footer">
       <p>Artificer is an independent tabletop campaign toolkit in active development.</p>
       <div>
@@ -235,6 +248,13 @@
         <a href="https://www.buymeacoffee.com/" target="_blank" rel="noreferrer">Buy Me a Coffee</a>
       </div>
     </footer>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image lightbox">
+      <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <div class="lightbox-content">
+        <img src="" alt="" />
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
