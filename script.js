@@ -61,11 +61,11 @@ const closeLightbox = () => {
 };
 
 // Module Preview logic
-const moduleArticles = document.querySelectorAll('.feature-grid article');
-moduleArticles.forEach(article => {
-  const asset = article.getAttribute('data-module-asset');
-  const btn = article.querySelector('.module-preview-btn');
-  const title = article.querySelector('h3')?.textContent;
+const moduleElements = document.querySelectorAll('[data-module-asset]');
+moduleElements.forEach(el => {
+  const asset = el.getAttribute('data-module-asset');
+  const btn = el.querySelector('.module-preview-btn');
+  const title = el.querySelector('h3')?.textContent || el.querySelector('h4')?.textContent;
 
   const handlePreview = (e) => {
     e.stopPropagation();
@@ -75,8 +75,8 @@ moduleArticles.forEach(article => {
   };
 
   btn?.addEventListener('click', handlePreview);
-  article.addEventListener('click', handlePreview);
-  article.style.cursor = 'pointer';
+  el.addEventListener('click', handlePreview);
+  el.style.cursor = 'pointer';
 });
 
 lightboxClose?.addEventListener('click', closeLightbox);
