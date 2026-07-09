@@ -779,25 +779,95 @@ h3 {
   line-height: 1.65;
 }
 
+/* Press Section */
+.press-section {
+  background: var(--charcoal);
+  color: var(--bone);
+}
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.press-item h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--gold-hot);
+}
+
+.press-item p {
+  font-size: 14px;
+  color: rgba(245, 235, 217, 0.6);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.press-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bone);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.press-link:hover {
+  color: var(--gold-hot);
+  border-color: var(--gold-hot);
+}
+
 .site-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  gap: 40px;
   border-top: 1px solid var(--line);
-  padding: 28px clamp(18px, 5vw, 72px);
+  padding: 64px clamp(18px, 5vw, 72px);
   color: rgba(245, 235, 217, 0.58);
   font-size: 14px;
 }
 
-.site-footer p {
+.footer-disclaimer {
+  max-width: 600px;
+}
+
+.footer-disclaimer strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--gold-hot);
+  font-family: Cinzel, serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-disclaimer p {
+  font-size: 13px;
+  line-height: 1.6;
   margin: 0;
 }
 
-.site-footer div {
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(245, 235, 217, 0.06);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 24px;
 }
 
 @media (max-width: 980px) {
@@ -836,7 +906,8 @@ h3 {
   .feature-grid,
   .timeline,
   .makers-grid,
-  .faq-grid {
+  .faq-grid,
+  .press-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -910,8 +981,12 @@ h3 {
   .gallery,
   .makers-grid,
   .faq-grid,
-  .status-comparison {
+  .status-comparison,
+  .press-grid,
+  .footer-bottom {
     grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .gallery .gallery-large {
