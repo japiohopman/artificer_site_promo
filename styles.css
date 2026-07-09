@@ -508,6 +508,45 @@ h3 {
   margin-bottom: 12px;
 }
 
+.status-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.status-col h4 {
+  font-family: Cinzel, serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(14, 17, 16, 0.1);
+  padding-bottom: 8px;
+}
+
+.status-col ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.status-col li {
+  font-size: 14px;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  color: rgba(14, 17, 16, 0.68);
+}
+
+.status-col li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
 .feature-grid p {
   color: rgba(14, 17, 16, 0.68);
   line-height: 1.65;
@@ -641,6 +680,87 @@ h3 {
   padding: 24px;
 }
 
+/* Makers Section */
+.makers-section {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.makers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.makers-grid article {
+  background: rgba(245, 235, 217, 0.04);
+  border: 1px solid rgba(245, 235, 217, 0.1);
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.makers-grid article:hover {
+  background: rgba(245, 235, 217, 0.08);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.maker-avatar {
+  width: 64px;
+  height: 64px;
+  background: var(--charcoal);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: Cinzel, serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--gold-hot);
+}
+
+.makers-grid h3 {
+  margin-bottom: 8px;
+}
+
+.makers-grid .eyebrow {
+  font-size: 10px;
+  margin-bottom: 16px;
+}
+
+.makers-grid p:not(.eyebrow) {
+  font-size: 14px;
+  color: rgba(245, 235, 217, 0.6);
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: #f0e4cc;
+  color: var(--ink);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.faq-grid h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.faq-grid p {
+  font-size: 15px;
+  color: rgba(14, 17, 16, 0.7);
+  line-height: 1.6;
+}
+
 .timeline strong,
 .timeline span {
   display: block;
@@ -714,7 +834,9 @@ h3 {
   }
 
   .feature-grid,
-  .timeline {
+  .timeline,
+  .makers-grid,
+  .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -785,7 +907,10 @@ h3 {
   .hero-stats,
   .feature-grid,
   .timeline,
-  .gallery {
+  .gallery,
+  .makers-grid,
+  .faq-grid,
+  .status-comparison {
     grid-template-columns: 1fr;
   }
 
