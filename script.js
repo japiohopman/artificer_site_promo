@@ -1,4 +1,4 @@
-const CDN_BASE = 'https://raw.githubusercontent.com/japiohopman/artificer/main/assets/';
+const CDN_BASE = 'https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/';
 
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
