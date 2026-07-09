@@ -1,3 +1,5 @@
+const CDN_BASE = 'https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/';
+
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const navLinks = document.querySelectorAll('.main-nav a');
@@ -35,16 +37,20 @@ const lightboxImg = lightbox?.querySelector('img');
 const lightboxClose = lightbox?.querySelector('.lightbox-close');
 const galleryImages = document.querySelectorAll('.gallery img');
 
+const openLightbox = (src, alt) => {
+  if (lightboxImg) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+  }
+  lightbox?.classList.add('is-open');
+  lightbox?.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
+
 galleryImages.forEach(img => {
   img.style.cursor = 'pointer';
   img.addEventListener('click', () => {
-    if (lightboxImg) {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-    }
-    lightbox?.classList.add('is-open');
-    lightbox?.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    openLightbox(img.src, img.alt);
   });
 });
 
@@ -53,6 +59,25 @@ const closeLightbox = () => {
   lightbox?.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 };
+
+// Module Preview logic
+const moduleArticles = document.querySelectorAll('.feature-grid article');
+moduleArticles.forEach(article => {
+  const asset = article.getAttribute('data-module-asset');
+  const btn = article.querySelector('.module-preview-btn');
+  const title = article.querySelector('h3')?.textContent;
+
+  const handlePreview = (e) => {
+    e.stopPropagation();
+    if (asset) {
+      openLightbox(`${CDN_BASE}${asset}`, title || 'Module Preview');
+    }
+  };
+
+  btn?.addEventListener('click', handlePreview);
+  article.addEventListener('click', handlePreview);
+  article.style.cursor = 'pointer';
+});
 
 lightboxClose?.addEventListener('click', closeLightbox);
 lightbox?.addEventListener('click', (e) => {
