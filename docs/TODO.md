@@ -18,6 +18,8 @@
 - [ ] Module-highlights verwerken uit `docs/modules`.
 
 ## Assets
+- [ ] voor de asset map gaan we de cdn van de     japiohopman
+    artificer gebuiken zodat de assets dynamich worden ge update https://github.com/japiohopman/artificer/tree/main/docs/site/assets/ 
 - [ ] Screenshots optimaliseren/comprimeren.
 - [ ] Hero image kiezen of opnieuw maken.
 - [ ] Social preview image maken.
