@@ -34,8 +34,9 @@
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="#demo">Demo</a>
         <a href="#features">Features</a>
-        <a href="#support">Support</a>
         <a href="#roadmap">Roadmap</a>
+        <a href="#join">Join</a>
+        <a href="#support">Support</a>
       </nav>
       <div class="header-actions">
         <a class="header-cta" href="https://www.kickstarter.com/" target="_blank" rel="noreferrer">
@@ -127,8 +128,14 @@
             </div>
           </div>
         </div>
-        <div class="showcase-frame">
-          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/assets/promo_world_map_with_panels.png" alt="World atlas with information panels" />
+        <div class="showcase-wrapper">
+          <div class="showcase-frame video-placeholder">
+            <div class="video-overlay">
+              <span class="play-icon">▶</span>
+              <p>Watch the walkthrough (Coming soon)</p>
+            </div>
+            <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/assets/promo_world_map_with_panels.png" alt="World atlas with information panels" />
+          </div>
           <div class="showcase-caption">
             <strong>Living world atlas</strong>
             <span>Map, location panels, travel context and world state in one view.</span>
@@ -253,6 +260,18 @@
         </div>
       </section>
 
+      <section id="newsletter" class="section newsletter-section reveal">
+        <div class="newsletter-content">
+          <p class="eyebrow">Stay Updated</p>
+          <h2>Follow Development</h2>
+          <p>Get notified about the public demo release, developer updates, and the upcoming Kickstarter launch.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter placeholder: Thanks for following!');">
+            <input type="email" placeholder="Your email address" required aria-label="Email address" />
+            <button type="submit" class="button primary">Follow</button>
+          </form>
+        </div>
+      </section>
+
       <section id="support" class="section support-section reveal">
         <div class="support-copy">
           <p class="eyebrow">Support path</p>
@@ -290,6 +309,31 @@
         </div>
       </section>
 
+      <section id="use-cases" class="section use-cases-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow dark">How to use Artificer</p>
+          <h2>Built for the Table</h2>
+          <p class="section-lead">Artificer is designed to handle the heavy lifting, whether you're in the middle of a session or prepping for the next one.</p>
+        </div>
+        <div class="use-case-grid">
+          <article>
+            <span class="use-case-id">Scenario A</span>
+            <h3>Prep a Session</h3>
+            <p>Load world data into the Atlas, seed locations with quest hooks, and pre-load soundscapes for upcoming scenes. Campaign memory ensures continuity across sessions.</p>
+          </article>
+          <article>
+            <span class="use-case-id">Scenario B</span>
+            <h3>Run Travel</h3>
+            <p>Manage travel states, weather shifts, and regional markers in real-time. Use the Atmosphere Engine to shift the mood as players cross borders.</p>
+          </article>
+          <article>
+            <span class="use-case-id">Scenario C</span>
+            <h3>Resolve an Encounter</h3>
+            <p>Drop into the Tactical Table for grid-based combat. Roll digital dice with modifiers and track the initiative without losing your place in the narrative.</p>
+          </article>
+        </div>
+      </section>
+
       <section id="press" class="section press-section reveal">
         <div class="section-heading">
           <p class="eyebrow dark">Media Resources</p>
@@ -312,6 +356,34 @@
             <p>A concise summary of Artificer's vision, features, and roadmap.</p>
             <a href="#" class="press-link">Download Factsheet (PDF)</a>
           </div>
+        </div>
+      </section>
+
+      <section id="join" class="section join-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow dark">Community & Code</p>
+          <h2>Join Development</h2>
+          <p class="section-lead">Artificer is an open-hearted project. Whether you are a developer, a writer, or a playtester, there is a place for you in the collective.</p>
+        </div>
+        <div class="join-grid">
+          <article>
+            <div class="join-icon">⌨️</div>
+            <h3>Contribute on GitHub</h3>
+            <p>Explore the codebase, report bugs, or submit pull requests. Help us build the most robust independent GM toolkit.</p>
+            <a href="https://github.com/japiohopman/artificer" class="button outline" target="_blank" rel="noreferrer">View Repository</a>
+          </article>
+          <article>
+            <div class="join-icon">💬</div>
+            <h3>Join the Discord</h3>
+            <p>Connect with other GMs and developers. Share your feedback, discuss features, and help shape the future of Artificer.</p>
+            <a href="#" class="button outline disabled" onclick="return false;">Coming Soon</a>
+          </article>
+          <article>
+            <div class="join-icon">🎲</div>
+            <h3>Beta Playtesting</h3>
+            <p>Get early access to new modules and help us refine the user experience through active playtesting sessions.</p>
+            <a href="#newsletter" class="button outline">Apply via Newsletter</a>
+          </article>
         </div>
       </section>
 
