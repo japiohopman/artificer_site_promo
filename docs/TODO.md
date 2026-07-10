@@ -1,41 +1,21 @@
-# Promo Site Todo
+# Promo Site Status & Next Steps
 
-## Direct
-- [ ] Vervang `https://www.kickstarter.com/` door echte campagne- of prelaunch-link.
-- [ ] Vervang `https://www.buymeacoffee.com/` door echte creator-link.
-- [ ] Kies definitieve publieke naam: `Artificer`, `Arcane Codex`, of combinatie.
-- [ ] Voeg contact/follow link toe.
-- [ ] Controleer alle copy op system-neutral taal.
-- [ ] Maak mobiele screenshots van de site.
+## ✅ Completed Tasks
+- [x] **Brand Identity:** Established "Artificer: The Foundry of Worlds" with Cinzel/Inter typography.
+- [x] **Content Modules:** Integrated Foundry, Tavern, and GM Kit highlights with 11Labs/AI context.
+- [x] **Responsive UI:** Fully responsive design with mobile-specific navigation and stats layout.
+- [x] **Interactive Features:** Global lightbox for module previews, scroll-reveal animations, and sticky glassmorphism header.
+- [x] **Performance:** Pure HTML/CSS/JS implementation with optimized asset delivery.
+- [x] **Social/SEO:** Added Open Graph, Twitter Card metadata, and custom SVG favicon.
+- [x] **Legal:** Added independent toolkit disclaimer and Lorekeeper Collective branding.
 
-## Content
-- [ ] Maker story schrijven.
-- [ ] FAQ schrijven.
-- [ ] Backer tiers definitief maken.
-- [ ] "Built already" sectie toevoegen.
-- [ ] "Funding next" sectie toevoegen.
-- [ ] Disclaimer toevoegen: independent tabletop toolkit.
-- [ ] Module-highlights verwerken uit `docs/modules`.
+## 🚀 Immediate Next Steps (Pre-Launch)
+- [ ] **Real URLs:** Replace placeholder Kickstarter and Buy Me a Coffee links in `index.html`.
+- [ ] **Final Assets:** Swap internal placeholders with final high-resolution gameplay screenshots.
+- [ ] **Analytics:** Add Fathom or Plausible analytics script before deployment.
+- [ ] **Forms:** Connect the newsletter form to a provider (e.g., Buttondown or Beehiiv).
 
-## Assets
-- [ ] Screenshots optimaliseren/comprimeren.
-- [ ] Hero image kiezen of opnieuw maken.
-- [ ] Social preview image maken.
-- [ ] Favicon toevoegen.
-- [ ] Logo/wordmark toevoegen.
-- [ ] Eventueel korte trailer of GIF maken.
-
-## Techniek
-- [ ] Plain HTML/CSS/JS behouden tot campagnepagina stabiel is.
-- [ ] Alleen naar EJS/Eleventy/Astro migreren als er meerdere pagina's komen.
-- [ ] Geen Bootstrap gebruiken tenzij snelheid belangrijker wordt dan eigen uitstraling.
-- [ ] Check broken images na elke assetwijziging.
-- [ ] Check lighthouse/performance voor public launch.
-
-## Launch
-- [ ] Eigen repo aanmaken.
-- [ ] `site/` inhoud kopiëren naar eigen repo.
-- [ ] Hosting kiezen: GitHub Pages, Netlify, Vercel of Cloudflare Pages.
-- [ ] Custom domain instellen.
-- [ ] Open Graph preview testen.
-- [ ] Kickstarter en Buy Me a Coffee links live zetten.
+## 🛠 Maintenance
+- [ ] **Asset Audit:** Periodically check `script.js` CDN base path if repository structure changes.
+- [ ] **Copy Review:** Periodic review of system-neutral language as the app evolves.
+- [ ] **Deployment:** Host via GitHub Pages or Netlify.
