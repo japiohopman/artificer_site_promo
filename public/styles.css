@@ -1487,3 +1487,18 @@ h3 {
   background: var(--gold-hot);
   transform: translateY(-4px);
 }
+
+.newsletter-status {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 20px;
+}
+
+.newsletter-status.success {
+  color: #15110b;
+}
+
+.newsletter-status.error {
+  color: #a94d45;
+}

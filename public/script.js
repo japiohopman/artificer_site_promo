@@ -108,3 +108,54 @@ revealElements.forEach(el => revealObserver.observe(el));
 backToTop?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Newsletter Subscription Logic
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterEmail = document.getElementById('newsletter-email');
+const newsletterStatus = document.getElementById('newsletter-status');
+
+newsletterForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = newsletterEmail.value;
+  const button = newsletterForm.querySelector('button');
+
+  // Reset status
+  if (newsletterStatus) {
+    newsletterStatus.textContent = 'Joining the collective...';
+    newsletterStatus.className = 'newsletter-status';
+  }
+  button.disabled = true;
+
+  try {
+    const response = await fetch('/subscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      if (newsletterStatus) {
+        newsletterStatus.textContent = data.message;
+        newsletterStatus.classList.add('success');
+      }
+      newsletterEmail.value = '';
+    } else {
+      if (newsletterStatus) {
+        newsletterStatus.textContent = data.error || 'Something went wrong.';
+        newsletterStatus.classList.add('error');
+      }
+    }
+  } catch (error) {
+    if (newsletterStatus) {
+      newsletterStatus.textContent = 'Could not connect to the server.';
+      newsletterStatus.classList.add('error');
+    }
+  } finally {
+    button.disabled = false;
+  }
+});

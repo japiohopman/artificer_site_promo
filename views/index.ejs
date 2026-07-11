@@ -297,10 +297,11 @@
           <p class="eyebrow">Stay Updated</p>
           <h2>Follow Development</h2>
           <p>Get notified about the public demo release, developer updates, and the upcoming Kickstarter launch.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter placeholder: Thanks for following!');">
-            <input type="email" placeholder="Your email address" required aria-label="Email address" />
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Your email address" required aria-label="Email address" />
             <button type="submit" class="button primary">Follow</button>
           </form>
+          <div id="newsletter-status" class="newsletter-status"></div>
         </div>
       </section>
 
