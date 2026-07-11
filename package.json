@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "A high-performance, responsive promotional site for **Artificer**, an independent tabletop campaign control room for Game Masters.",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japiohopman/artificer_site_promo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/japiohopman/artificer_site_promo/issues"
+  },
+  "homepage": "https://github.com/japiohopman/artificer_site_promo#readme",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "3.0.80",
+    "dotenv": "16.4.5",
+    "ejs": "3.1.10",
+    "express": "4.19.2"
+  }
+}
