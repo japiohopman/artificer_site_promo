@@ -2,7 +2,7 @@
   "name": "app",
   "version": "1.0.0",
   "description": "A high-performance, responsive promotional site for **Artificer**, an independent tabletop campaign control room for Game Masters.",
-  "main": "script.js",
+  "main": "server.js",
   "directories": {
     "doc": "docs"
   },
