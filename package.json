@@ -26,6 +26,6 @@
     "@mailchimp/mailchimp_marketing": "3.0.80",
     "dotenv": "16.4.5",
     "ejs": "3.1.10",
-    "express": "4.19.2"
+    "express": "^4.22.2"
   }
 }
