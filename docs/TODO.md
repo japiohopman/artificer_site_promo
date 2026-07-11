@@ -15,27 +15,7 @@
 - [ ] **Analytics:** Add Fathom or Plausible analytics script before deployment.
 - [ ] **Forms:** Connect the newsletter form to a provider (e.g., Buttondown or Beehiiv).
 
-## Assets
-- [ ] voor de asset map gaan we de cdn van de     japiohopman
-    artificer gebuiken zodat de assets dynamich worden ge update https://github.com/japiohopman/artificer/tree/main/docs/site/assets/ 
-- [ ] Screenshots optimaliseren/comprimeren.
-- [ ] Hero image kiezen of opnieuw maken.
-- [ ] Social preview image maken.
-- [ ] Favicon toevoegen.
-- [ ] Logo/wordmark toevoegen.
-- [ ] Eventueel korte trailer of GIF maken.
-
-## Techniek
-- [ ] Plain HTML/CSS/JS behouden tot campagnepagina stabiel is.
-- [ ] Alleen naar EJS/Eleventy/Astro migreren als er meerdere pagina's komen.
-- [ ] Geen Bootstrap gebruiken tenzij snelheid belangrijker wordt dan eigen uitstraling.
-- [ ] Check broken images na elke assetwijziging.
-- [ ] Check lighthouse/performance voor public launch.
-
-## Launch
-- [ ] Eigen repo aanmaken.
-- [ ] `site/` inhoud kopiëren naar eigen repo.
-- [ ] Hosting kiezen: GitHub Pages, Netlify, Vercel of Cloudflare Pages.
-- [ ] Custom domain instellen.
-- [ ] Open Graph preview testen.
-- [ ] Kickstarter en Buy Me a Coffee links live zetten.
+## 🛠 Maintenance
+- [ ] **Asset Audit:** Periodically check `script.js` CDN base path if repository structure changes.
+- [ ] **Copy Review:** Periodic review of system-neutral language as the app evolves.
+- [ ] **Deployment:** Host via GitHub Pages or Netlify.
