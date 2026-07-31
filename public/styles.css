@@ -1,16 +1,18 @@
 :root {
   color-scheme: dark;
-  --ink: #0e1110;
-  --coal: #141712;
-  --charcoal: #1d211b;
+  --ink: #0d0f0d;
+  --coal: #121612;
+  --charcoal: #191e18;
   --bone: #f5ebd9;
   --muted: #c8bda9;
   --gold: #d9b75f;
   --gold-hot: #f3d889;
+  --gold-glow: rgba(217, 183, 95, 0.4);
   --teal: #67d1c0;
   --red: #a94d45;
-  --line: rgba(245, 235, 217, 0.16);
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+  --line: rgba(245, 235, 217, 0.12);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  --parchment-glow: 0 0 15px rgba(245, 235, 217, 0.05);
 }
 
 * {
@@ -274,36 +276,55 @@ h3 {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  padding: 14px 20px;
-  font-size: 13px;
+  padding: 14px 24px;
+  font-size: 12px;
   font-weight: 900;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--parchment-glow);
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.button:hover::after {
+  transform: translateX(100%);
 }
 
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 12px var(--gold-glow);
 }
 
 .button.primary {
   background: var(--gold);
-  color: #15110b;
+  color: #0d0f0d;
+  border: 1px solid rgba(217, 183, 95, 0.6);
 }
 
 .button.primary:hover {
   background: var(--gold-hot);
+  border-color: var(--gold-hot);
 }
 
 .button.secondary,
 .button.outline {
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(0, 0, 0, 0.26);
-  color: white;
+  border-color: rgba(245, 235, 217, 0.24);
+  background: rgba(13, 15, 13, 0.4);
+  color: var(--bone);
 }
 
 .button.outline {
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(245, 235, 217, 0.24);
 }
 
 .section:not(.roadmap-section):not(.faq-section):not(.newsletter-section) .button.outline {
@@ -464,14 +485,17 @@ h3 {
   padding: 32px;
   display: flex;
   flex-direction: column;
-  transition: background 0.2s ease, transform 0.2s ease;
+  border: 1px solid rgba(14, 17, 16, 0.05);
+  position: relative;
+  transition: background 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
 }
 
 .feature-grid article:hover {
   background: #fffcf5;
-  transform: scale(1.01);
+  transform: translateY(-4px);
   z-index: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(14, 17, 16, 0.15), 0 0 15px rgba(217, 183, 95, 0.25);
 }
 
 .feature-grid article header {
@@ -746,22 +770,23 @@ h3 {
 
 .makers-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
 .makers-grid article {
-  background: rgba(245, 235, 217, 0.04);
-  border: 1px solid rgba(245, 235, 217, 0.1);
+  background: rgba(245, 235, 217, 0.03);
+  border: 1px solid rgba(245, 235, 217, 0.08);
   padding: 32px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 }
 
 .makers-grid article:hover {
-  background: rgba(245, 235, 217, 0.08);
+  background: rgba(245, 235, 217, 0.06);
   border-color: var(--gold);
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 15px var(--gold-glow);
 }
 
 .maker-avatar {
@@ -810,14 +835,16 @@ h3 {
 .mini-game-card.featured {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  background: rgba(245, 235, 217, 0.04);
-  border: 1px solid rgba(245, 235, 217, 0.1);
+  background: rgba(245, 235, 217, 0.02);
+  border: 1px solid rgba(245, 235, 217, 0.08);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 }
 
 .mini-game-card.featured:hover {
   border-color: var(--gold);
+  background: rgba(245, 235, 217, 0.04);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
 }
 
 .mini-game-media {
@@ -987,20 +1014,21 @@ h3 {
 }
 
 .join-grid article {
-  background: rgba(245, 235, 217, 0.04);
-  border: 1px solid rgba(245, 235, 217, 0.1);
+  background: rgba(245, 235, 217, 0.03);
+  border: 1px solid rgba(245, 235, 217, 0.08);
   padding: 40px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .join-grid article:hover {
-  background: rgba(245, 235, 217, 0.08);
+  background: rgba(245, 235, 217, 0.06);
   border-color: var(--gold);
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 15px var(--gold-glow);
 }
 
 .join-icon {
@@ -1244,6 +1272,12 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .makers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 980px) {
