@@ -244,21 +244,29 @@
       </section>
 
       <section class="gallery reveal" aria-label="Product screenshots">
-        <figure class="gallery-large">
-          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/promo_character_profile_full.png" alt="Character profile screen" />
-          <figcaption>Character vault and progression</figcaption>
+        <figure class="gallery-large gallery-mosaic-item-1">
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/game_hud.png" alt="Arcane Codex Main Interface" />
+          <figcaption>Arcane Codex Game HUD</figcaption>
         </figure>
-        <figure>
-          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/promo_journal.png" alt="Campaign journal screen" />
-          <figcaption>Campaign journal</figcaption>
+        <figure class="gallery-mosaic-item-2">
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/hud_map_interface.png" alt="Interactive Map Navigation" />
+          <figcaption>Interactive Atlas HUD</figcaption>
         </figure>
-        <figure>
-          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/promo_dice_roller.png" alt="Digital dice roller" />
-          <figcaption>3D dice</figcaption>
+        <figure class="gallery-mosaic-item-3">
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/hud_chat_interface.png" alt="AI Orchestration Chat" />
+          <figcaption>AI Orchestration HUD</figcaption>
         </figure>
-        <figure>
-          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/combat_hud_canvas_grid.png" alt="Tactical combat grid" />
-          <figcaption>Tactical table</figcaption>
+        <figure class="gallery-mosaic-item-4">
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/tactical_view.png" alt="Tactical Battle Grid" />
+          <figcaption>Tactical Battle View</figcaption>
+        </figure>
+        <figure class="gallery-mosaic-item-5">
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/7.png" alt="Character Creation Forge" />
+          <figcaption>Character Creator Forge</figcaption>
+        </figure>
+        <figure class="gallery-mosaic-item-6">
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/3.png" alt="Character Stats and Attributes" />
+          <figcaption>Character Stats Sheet</figcaption>
         </figure>
       </section>
 
@@ -426,26 +434,73 @@
           </div>
         </div>
         <div class="devkit-modules-grid">
-          <article>
-            <header>
+          <article class="devkit-group-card">
+            <header class="devkit-group-header">
               <span class="module-icon">🔍</span>
               <h4>Primary Inspectors</h4>
+              <span class="tag core">SYSTEM CORE</span>
             </header>
-            <p><strong>Codex & World Explorer:</strong> Direct interface for managing global assets (Enemies, Gear) and regional location data.</p>
+            <p class="devkit-group-desc">Directly inspect, edit, and audit the game's core "Reality" (Atlas data) and current campaign state flags.</p>
+            <ul class="devkit-subtools-list">
+              <li>
+                <strong>Codex Explorer</strong>
+                <span>Manage global asset repository of Enemies, Equipment, and Materials.</span>
+              </li>
+              <li>
+                <strong>World Explorer</strong>
+                <span>Granular spatial interface for regional, regional sub-tiers, and local location data.</span>
+              </li>
+              <li>
+                <strong>Flag Manager</strong>
+                <span>Monitor and modify live world flags and dynamic faction standings in real time.</span>
+              </li>
+            </ul>
           </article>
-          <article>
-            <header>
+
+          <article class="devkit-group-card">
+            <header class="devkit-group-header">
               <span class="module-icon">🧬</span>
               <h4>Entity Generators</h4>
+              <span class="tag ai">AI-READY</span>
             </header>
-            <p><strong>NPC & Habitat:</strong> Procedural and AI-driven creation of NPCs with lore synthesis and environmental backgrounds.</p>
+            <p class="devkit-group-desc">Grouped under a single management hub to handle procedural and AI-driven creation of game assets.</p>
+            <ul class="devkit-subtools-list">
+              <li>
+                <strong>NPC Generator</strong>
+                <span>High-fidelity character creation pipeline integrated with AI lore and image synthesis.</span>
+              </li>
+              <li>
+                <strong>Enemy Manifestation</strong>
+                <span>Intelligent parser that transforms raw monster stats directly into valid database entities.</span>
+              </li>
+              <li>
+                <strong>Habitat Generator</strong>
+                <span>Generate and commit highly atmospheric, region-specific environmental backdrops.</span>
+              </li>
+            </ul>
           </article>
-          <article>
-            <header>
+
+          <article class="devkit-group-card">
+            <header class="devkit-group-header">
               <span class="module-icon">🧪</span>
               <h4>Validation Testers</h4>
+              <span class="tag alpha">AUDIT TOOL</span>
             </header>
-            <p><strong>Combat & Slot Simulators:</strong> Verify game mechanics, character store sync, and encounter logic before sessions.</p>
+            <p class="devkit-group-desc">Comprehensive test suites ensuring physical systems, movement scales, and rules logic align precisely.</p>
+            <ul class="devkit-subtools-list">
+              <li>
+                <strong>Combat Tester</strong>
+                <span>Simulate dynamic tactical encounters and actions directly on the battle canvas.</span>
+              </li>
+              <li>
+                <strong>NPC Slot Tester</strong>
+                <span>Verify robust character store synchronization and party slot allocations.</span>
+              </li>
+              <li>
+                <strong>Mechanics Simulator</strong>
+                <span>Test dynamic item interactions, container weight limits, and sheet calculations.</span>
+              </li>
+            </ul>
           </article>
         </div>
         <div class="devkit-footer">
@@ -502,6 +557,40 @@
           <article>
             <h3>What are backers funding?</h3>
             <p>Backers fund the transition from an internal tool to a public-ready toolkit: UI polish, demo content, AI narrative integration, and the creator-facing world building tools.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="devlog" class="section devlog-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow dark">Development Velocity</p>
+          <h2>Weekly Chronicles & Rollouts</h2>
+          <p class="section-lead">The digital grimoire grows every week. We maintain a relentless cadence of releases, verified through rigorous automated test cycles and visual audits.</p>
+        </div>
+        <div class="devlog-timeline">
+          <article class="devlog-card">
+            <header class="devlog-card-header">
+              <span class="devlog-version">v1.4.0</span>
+              <span class="devlog-date">This Week</span>
+            </header>
+            <h3>Meteocons Time & Weather System</h3>
+            <p>Integrated a high-fidelity weather engine. Game Masters can trigger synchronized time shifts, atmospheric precipitation states, and temperature transitions directly in the atlas views.</p>
+          </article>
+          <article class="devlog-card">
+            <header class="devlog-card-header">
+              <span class="devlog-version">v1.3.2</span>
+              <span class="devlog-date">Last Week</span>
+            </header>
+            <h3>Registry-Based Inventory v2</h3>
+            <p>Re-architected the items engine using a slot-and-container design. Implemented strict mechanical validation rules for container capacities, slot constraints, and item weights.</p>
+          </article>
+          <article class="devlog-card">
+            <header class="devlog-card-header">
+              <span class="devlog-version">v1.2.0</span>
+              <span class="devlog-date">2 Weeks Ago</span>
+            </header>
+            <h3>AI Lore Synthesis Bridge</h3>
+            <p>Wired the core campaign journal with Google Gemini 1.5 Flash. Fully automated the transformation of raw unstructured player diaries into structured campaign memories, NPCs, and quest logs.</p>
           </article>
         </div>
       </section>
