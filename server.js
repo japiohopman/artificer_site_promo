@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,8 +19,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+function getProductTruth() {
+  try {
+    const rawData = fs.readFileSync(path.join(__dirname, 'public', 'data', 'product_truth.json'), 'utf8');
+    const data = JSON.parse(rawData);
+
+    const reportPath = path.join(__dirname, 'verification', 'report.json');
+    if (fs.existsSync(reportPath)) {
+      const reportData = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+      data.verification_report = reportData;
+    }
+    return data;
+  } catch (err) {
+    console.error('Error reading product_truth.json:', err);
+    return { brand: { name: 'Arcane Codex' }, modules: [], devkit: { categories: [] }, devlog: [], roadmap: [] };
+  }
+}
+
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { productTruth: getProductTruth() });
+});
+
+app.get('/api/status', (req, res) => {
+  res.json(getProductTruth());
 });
 
 app.post('/subscribe', async (req, res) => {
