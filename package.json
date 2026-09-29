@@ -1,14 +1,15 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "A high-performance, responsive promotional site for **Artificer**, an independent tabletop campaign control room for Game Masters.",
+  "description": "A high-performance, responsive promotional site for **Arcane Codex** (Artificer), an independent tabletop campaign control room for Game Masters.",
   "main": "server.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "python3 verification/capture.py",
+    "verify": "python3 verification/capture.py"
   },
   "repository": {
     "type": "git",

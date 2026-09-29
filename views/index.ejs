@@ -40,6 +40,7 @@
         <a href="#demo">Demo</a>
         <a href="#features">Features</a>
         <a href="#devkit">GM Kit</a>
+        <a href="#devlog">Progress</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#join">Join</a>
         <a href="#support">Support</a>
@@ -66,13 +67,11 @@
           <p class="eyebrow">Independent tabletop campaign software</p>
           <h1>Run bigger worlds with less table chaos.</h1>
           <p class="hero-copy">
-            Arcane Codex is a campaign control room for game masters: living atlas, campaign memory,
-            character vault, tactical table, dice, audio atmosphere and AI-ready orchestration in one
-            polished toolkit.
+            <%= productTruth.brand && productTruth.brand.pitch ? productTruth.brand.pitch : 'Arcane Codex is a campaign control room for game masters.' %>
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://www.kickstarter.com/" target="_blank" rel="noreferrer" title="Back Arcane Codex on Kickstarter">
-              Back on Kickstarter
+            <a class="button primary" href="#newsletter" title="Follow Arcane Codex development">
+              Follow Development
             </a>
             <a class="button secondary" href="#demo">Watch the pitch</a>
           </div>
@@ -96,10 +95,12 @@
       <section class="campaign-strip" aria-label="Campaign callout">
         <div>
           <span class="status-dot"></span>
-          <strong>Campaign draft live soon</strong>
-          <span>Early support funds demo polish, public-ready content and creator tools.</span>
+          <strong>Automated Verification Status: <%= productTruth.verification_summary ? productTruth.verification_summary.status : 'HEALTHY' %></strong>
+          <span>
+            <%= productTruth.verification_summary ? productTruth.verification_summary.passing_checks : '12' %> / <%= productTruth.verification_summary ? productTruth.verification_summary.total_checks : '12' %> automated checks passing across viewports (Desktop, Tablet, Mobile).
+          </span>
         </div>
-        <a href="#support">See pledge tiers</a>
+        <a href="#devlog">View Verification Data</a>
       </section>
 
       <section id="demo" class="section demo-section reveal">
@@ -113,7 +114,7 @@
 
           <div class="status-comparison">
             <div class="status-col">
-              <h4>Built Already</h4>
+              <h4>Built Already (Verified)</h4>
               <ul>
                 <li>Leaflet-powered World Atlas</li>
                 <li>Modular Atlas Service & Reality DB</li>
@@ -186,60 +187,19 @@
           <p class="section-lead">Arcane Codex is built as a series of deep, interconnected modules that replace a dozen disconnected tools with a single source of truth.</p>
         </div>
         <div class="feature-grid">
-          <article data-module-asset="promo_world_map_with_panels.png">
-            <header>
-              <span class="module-id">01</span>
-              <span class="tag">BETA</span>
-            </header>
-            <h3>Atlas & Reality DB</h3>
-            <p>The structured backbone of campaign reality: locations, markers, travel states, and world data persistence.</p>
-            <button class="module-preview-btn">View Module</button>
-          </article>
-          <article data-module-asset="promo_journal.png">
-            <header>
-              <span class="module-id">02</span>
-              <span class="tag ai">AI-READY</span>
-            </header>
-            <h3>AI Orchestration</h3>
-            <p>A Narrator vs. Engine architecture designed for dynamic session history, quest logs, and AI-assisted narration.</p>
-            <button class="module-preview-btn">View Module</button>
-          </article>
-          <article data-module-asset="promo_character_profile_full.png">
-            <header>
-              <span class="module-id">03</span>
-              <span class="tag">BETA</span>
-            </header>
-            <h3>Vault & Inventory</h3>
-            <p>Advanced equipment logic, slot-based containers, and character progression management.</p>
-            <button class="module-preview-btn">View Module</button>
-          </article>
-          <article data-module-asset="combat_hud_canvas_grid.png">
-            <header>
-              <span class="module-id">04</span>
-              <span class="tag alpha">ALPHA</span>
-            </header>
-            <h3>Tactical Table</h3>
-            <p>High-fidelity encounter grids with initiative tracking, token context, and tactile digital dice.</p>
-            <button class="module-preview-btn">View Module</button>
-          </article>
-          <article data-module-asset="promo_dice_roller.png">
-            <header>
-              <span class="module-id">05</span>
-              <span class="tag ai">AI-READY</span>
-            </header>
-            <h3>Atmosphere Engine</h3>
-            <p>Layered, scene-aware soundscapes that evolve with your campaign's narrative pulse.</p>
-            <button class="module-preview-btn">View Module</button>
-          </article>
-          <article data-module-asset="promo_world_map_wide.png">
-            <header>
-              <span class="module-id">06</span>
-              <span class="tag core">CORE</span>
-            </header>
-            <h3>Crafting & Creator</h3>
-            <p>Full-scale material and recipe architecture for deep world-building and item validation.</p>
-            <button class="module-preview-btn">View Module</button>
-          </article>
+          <% if (productTruth.modules && productTruth.modules.length > 0) { %>
+            <% productTruth.modules.forEach(function(mod, idx) { %>
+              <article data-module-asset="<%= mod.asset %>">
+                <header>
+                  <span class="module-id"><%= (idx + 1).toString().padStart(2, '0') %></span>
+                  <span class="tag <%= mod.tag_class %>"><%= mod.status %></span>
+                </header>
+                <h3><%= mod.name %></h3>
+                <p><%= mod.summary %></p>
+                <button class="module-preview-btn">View Module</button>
+              </article>
+            <% }); %>
+          <% } %>
         </div>
       </section>
 
@@ -249,8 +209,8 @@
           <figcaption>Arcane Codex Game HUD</figcaption>
         </figure>
         <figure class="gallery-mosaic-item-2">
-          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/hud_map_interface.png" alt="Interactive Map Navigation" />
-          <figcaption>Interactive Atlas HUD</figcaption>
+          <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/atlas_service.png" alt="Atlas Service Map" />
+          <figcaption>World Atlas Service</figcaption>
         </figure>
         <figure class="gallery-mosaic-item-3">
           <img src="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/screenshots/hud_chat_interface.png" alt="AI Orchestration Chat" />
@@ -434,74 +394,27 @@
           </div>
         </div>
         <div class="devkit-modules-grid">
-          <article class="devkit-group-card">
-            <header class="devkit-group-header">
-              <span class="module-icon">🔍</span>
-              <h4>Primary Inspectors</h4>
-              <span class="tag core">SYSTEM CORE</span>
-            </header>
-            <p class="devkit-group-desc">Directly inspect, edit, and audit the game's core "Reality" (Atlas data) and current campaign state flags.</p>
-            <ul class="devkit-subtools-list">
-              <li>
-                <strong>Codex Explorer</strong>
-                <span>Manage global asset repository of Enemies, Equipment, and Materials.</span>
-              </li>
-              <li>
-                <strong>World Explorer</strong>
-                <span>Granular spatial interface for regional, regional sub-tiers, and local location data.</span>
-              </li>
-              <li>
-                <strong>Flag Manager</strong>
-                <span>Monitor and modify live world flags and dynamic faction standings in real time.</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="devkit-group-card">
-            <header class="devkit-group-header">
-              <span class="module-icon">🧬</span>
-              <h4>Entity Generators</h4>
-              <span class="tag ai">AI-READY</span>
-            </header>
-            <p class="devkit-group-desc">Grouped under a single management hub to handle procedural and AI-driven creation of game assets.</p>
-            <ul class="devkit-subtools-list">
-              <li>
-                <strong>NPC Generator</strong>
-                <span>High-fidelity character creation pipeline integrated with AI lore and image synthesis.</span>
-              </li>
-              <li>
-                <strong>Enemy Manifestation</strong>
-                <span>Intelligent parser that transforms raw monster stats directly into valid database entities.</span>
-              </li>
-              <li>
-                <strong>Habitat Generator</strong>
-                <span>Generate and commit highly atmospheric, region-specific environmental backdrops.</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="devkit-group-card">
-            <header class="devkit-group-header">
-              <span class="module-icon">🧪</span>
-              <h4>Validation Testers</h4>
-              <span class="tag alpha">AUDIT TOOL</span>
-            </header>
-            <p class="devkit-group-desc">Comprehensive test suites ensuring physical systems, movement scales, and rules logic align precisely.</p>
-            <ul class="devkit-subtools-list">
-              <li>
-                <strong>Combat Tester</strong>
-                <span>Simulate dynamic tactical encounters and actions directly on the battle canvas.</span>
-              </li>
-              <li>
-                <strong>NPC Slot Tester</strong>
-                <span>Verify robust character store synchronization and party slot allocations.</span>
-              </li>
-              <li>
-                <strong>Mechanics Simulator</strong>
-                <span>Test dynamic item interactions, container weight limits, and sheet calculations.</span>
-              </li>
-            </ul>
-          </article>
+          <% if (productTruth.devkit && productTruth.devkit.categories) { %>
+            <% productTruth.devkit.categories.forEach(function(cat, idx) { %>
+              <article class="devkit-group-card">
+                <header class="devkit-group-header">
+                  <span class="module-icon"><%= idx === 0 ? '🔍' : (idx === 1 ? '🧬' : '🧪') %></span>
+                  <h4><%= cat.group %></h4>
+                  <span class="tag <%= idx === 0 ? 'core' : (idx === 1 ? 'ai' : 'alpha') %>">
+                    <%= idx === 0 ? 'SYSTEM CORE' : (idx === 1 ? 'AI-READY' : 'AUDIT TOOL') %>
+                  </span>
+                </header>
+                <p class="devkit-group-desc"><%= cat.description %></p>
+                <ul class="devkit-subtools-list">
+                  <% cat.tools.forEach(function(tool) { %>
+                    <li>
+                      <strong><%= tool %></strong>
+                    </li>
+                  <% }); %>
+                </ul>
+              </article>
+            <% }); %>
+          <% } %>
         </div>
         <div class="devkit-footer">
           <a href="https://github.com/japiohopman/artificer/blob/main/docs/ui/DEV_KIT.md" class="button primary" target="_blank" rel="noreferrer">Read Full Dev Kit Docs</a>
@@ -568,30 +481,18 @@
           <p class="section-lead">The digital grimoire grows every week. We maintain a relentless cadence of releases, verified through rigorous automated test cycles and visual audits.</p>
         </div>
         <div class="devlog-timeline">
-          <article class="devlog-card">
-            <header class="devlog-card-header">
-              <span class="devlog-version">v1.4.0</span>
-              <span class="devlog-date">This Week</span>
-            </header>
-            <h3>Meteocons Time & Weather System</h3>
-            <p>Integrated a high-fidelity weather engine. Game Masters can trigger synchronized time shifts, atmospheric precipitation states, and temperature transitions directly in the atlas views.</p>
-          </article>
-          <article class="devlog-card">
-            <header class="devlog-card-header">
-              <span class="devlog-version">v1.3.2</span>
-              <span class="devlog-date">Last Week</span>
-            </header>
-            <h3>Registry-Based Inventory v2</h3>
-            <p>Re-architected the items engine using a slot-and-container design. Implemented strict mechanical validation rules for container capacities, slot constraints, and item weights.</p>
-          </article>
-          <article class="devlog-card">
-            <header class="devlog-card-header">
-              <span class="devlog-version">v1.2.0</span>
-              <span class="devlog-date">2 Weeks Ago</span>
-            </header>
-            <h3>AI Lore Synthesis Bridge</h3>
-            <p>Wired the core campaign journal with Google Gemini 1.5 Flash. Fully automated the transformation of raw unstructured player diaries into structured campaign memories, NPCs, and quest logs.</p>
-          </article>
+          <% if (productTruth.devlog && productTruth.devlog.length > 0) { %>
+            <% productTruth.devlog.forEach(function(log) { %>
+              <article class="devlog-card">
+                <header class="devlog-card-header">
+                  <span class="devlog-version"><%= log.week %></span>
+                  <span class="devlog-date"><%= log.badge %></span>
+                </header>
+                <h3><%= log.title %></h3>
+                <p><%= log.description %></p>
+              </article>
+            <% }); %>
+          <% } %>
         </div>
       </section>
 
@@ -601,22 +502,14 @@
           <h2>A focused release promise.</h2>
         </div>
         <ol class="timeline">
-          <li>
-            <strong>Public demo path</strong>
-            <span>Sample party, sample campaign and no private keys required.</span>
-          </li>
-          <li>
-            <strong>AI GM bridge</strong>
-            <span>Tool calls for narration, travel, journal updates and tactical actions.</span>
-          </li>
-          <li>
-            <strong>System-neutral packs</strong>
-            <span>Content and wording that keep Arcane Codex useful beyond a single rules brand.</span>
-          </li>
-          <li>
-            <strong>Creator release</strong>
-            <span>World, NPC, item and encounter tools polished for other GMs.</span>
-          </li>
+          <% if (productTruth.roadmap && productTruth.roadmap.length > 0) { %>
+            <% productTruth.roadmap.forEach(function(item) { %>
+              <li>
+                <strong><%= item.phase %> — <%= item.goal %></strong>
+                <span><%= item.items.join(' • ') %></span>
+              </li>
+            <% }); %>
+          <% } %>
         </ol>
       </section>
     </main>

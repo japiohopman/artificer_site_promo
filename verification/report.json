@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-09-29T09:37:21.425491",
+  "status": "HEALTHY",
+  "checks": [
+    {
+      "name": "File Existence (public/data/product_truth.json)",
+      "passed": true,
+      "details": "Found on disk"
+    },
+    {
+      "name": "File Existence (public/styles.css)",
+      "passed": true,
+      "details": "Found on disk"
+    },
+    {
+      "name": "File Existence (public/favicon.svg)",
+      "passed": true,
+      "details": "Found on disk"
+    },
+    {
+      "name": "File Existence (server.js)",
+      "passed": true,
+      "details": "Found on disk"
+    },
+    {
+      "name": "File Existence (views/index.ejs)",
+      "passed": true,
+      "details": "Found on disk"
+    },
+    {
+      "name": "HTTP GET /",
+      "passed": true,
+      "details": "Status code 200"
+    },
+    {
+      "name": "HTTP GET /api/status",
+      "passed": true,
+      "details": "Valid Product Truth JSON returned"
+    },
+    {
+      "name": "HTTP POST /subscribe",
+      "passed": true,
+      "details": "Subscribe endpoint responded 200"
+    },
+    {
+      "name": "Viewport Capture (desktop)",
+      "passed": true,
+      "details": "Saved to verification/desktop.png"
+    },
+    {
+      "name": "Viewport Capture (tablet)",
+      "passed": true,
+      "details": "Saved to verification/tablet.png"
+    },
+    {
+      "name": "Viewport Capture (mobile)",
+      "passed": true,
+      "details": "Saved to verification/mobile.png"
+    },
+    {
+      "name": "Browser Console Audit",
+      "passed": true,
+      "details": "0 console errors found"
+    }
+  ],
+  "artifacts": [
+    "verification/desktop.png",
+    "verification/tablet.png",
+    "verification/mobile.png"
+  ]
+}

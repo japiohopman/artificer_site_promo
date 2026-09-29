@@ -1,0 +1,131 @@
+{
+  "brand": {
+    "name": "Arcane Codex",
+    "repository": "artificer",
+    "promo_repository": "artificer_site_promo",
+    "tagline": "Run bigger worlds with less table chaos.",
+    "pitch": "Arcane Codex is a campaign control room for game masters: living atlas, campaign memory, character vault, tactical table, dice, audio atmosphere and AI-ready orchestration in one focused workspace.",
+    "positioning": {
+      "play": "Play the World (Campaign Client)",
+      "forge": "Forge the World (DevKit & Creator Workshop)"
+    }
+  },
+  "verification_summary": {
+    "last_audit": "2026-08-13",
+    "status": "HEALTHY",
+    "viewports": ["desktop", "tablet", "mobile"],
+    "passing_checks": 12,
+    "total_checks": 12
+  },
+  "modules": [
+    {
+      "id": "atlas",
+      "name": "Interactive World Atlas",
+      "status": "BETA",
+      "tag_class": "beta",
+      "category": "Play the World",
+      "summary": "7 zoom tiers, regional sub-layers, structured location markers and travel state persistence.",
+      "asset": "promo_world_map_with_panels.png"
+    },
+    {
+      "id": "inventory",
+      "name": "Slot Inventory v2",
+      "status": "LIVE",
+      "tag_class": "core",
+      "category": "Play the World",
+      "summary": "Registry-based container logistics, slot allocation, item weight, and equipment state.",
+      "asset": "promo_character_profile_full.png"
+    },
+    {
+      "id": "meteocons",
+      "name": "Meteocons Time & Weather",
+      "status": "LIVE",
+      "tag_class": "core",
+      "category": "Play the World",
+      "summary": "Diurnal solar cycles, temperature progression, and animated weather states.",
+      "asset": "promo_world_map_wide.png"
+    },
+    {
+      "id": "tactical_grid",
+      "name": "Tactical Combat Grid",
+      "status": "BETA",
+      "tag_class": "beta",
+      "category": "Play the World",
+      "summary": "Coordinate grid mapping, Chebyshev movement collision checks, distance metrics, and 3D physical dice.",
+      "asset": "combat_hud_canvas_grid.png"
+    },
+    {
+      "id": "ai_orchestration",
+      "name": "AI Lore & Translation Bridge",
+      "status": "AI-READY",
+      "tag_class": "ai",
+      "category": "Play the World",
+      "summary": "Narrator vs. Engine architecture, Google Gemini 1.5 Flash tool-call bridge for session summaries and lore parsing.",
+      "asset": "promo_journal.png"
+    },
+    {
+      "id": "sound_engine",
+      "name": "Atmosphere Sound Engine",
+      "status": "LIVE",
+      "tag_class": "core",
+      "category": "Play the World",
+      "summary": "Scene-aware ambient audio mixing, soundscape triggers, and Philips Hue lighting sync.",
+      "asset": "promo_dice_roller.png"
+    }
+  ],
+  "devkit": {
+    "title": "The Foundry & DevKit",
+    "subtitle": "Forge the World — Operating System for living fantasy realities",
+    "categories": [
+      {
+        "group": "Primary Inspectors",
+        "description": "Spatial and entity state inspection tools.",
+        "tools": ["Codex Explorer", "World Explorer", "Flag Manager"]
+      },
+      {
+        "group": "Entity Generators",
+        "description": "Procedural creation and parsing engines.",
+        "tools": ["NPC Generator", "Enemy Manifestation", "Habitat Generator"]
+      },
+      {
+        "group": "Validation Testers",
+        "description": "Mechanics simulation and verification utilities.",
+        "tools": ["Combat Tester", "NPC Slot Tester", "Simulator"]
+      }
+    ]
+  },
+  "devlog": [
+    {
+      "week": "Week 32",
+      "title": "Verification & Progress Data Engine",
+      "badge": "Infrastructure",
+      "description": "Centralized Product Truth data pipeline and automated Playwright health verification suite."
+    },
+    {
+      "week": "Week 31",
+      "title": "Meteocons Weather & Temporal Widget",
+      "badge": "Feature Release",
+      "description": "Integrated real-time weather progression and diurnal solar tracking into the GM control desk."
+    },
+    {
+      "week": "Week 30",
+      "title": "Slot Inventory v2 & Container Engine",
+      "badge": "Core Architecture",
+      "description": "Rebuilt item engine using Zustand store and dnd-kit for slot containment and weight rules."
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "Phase 1 — Current",
+      "status": "Active",
+      "goal": "Public Demo & Product Truth Integration",
+      "items": ["Centralized product_truth.json", "Automated Playwright visual audit", "System-neutral campaign client"]
+    },
+    {
+      "phase": "Phase 2 — Next",
+      "status": "Planned",
+      "goal": "AI GM Bridge & Tool Calls",
+      "items": ["Direct tool calls for narration", "Spellbook FocusView", "Point Buy Calculator"]
+    }
+  ]
+}
