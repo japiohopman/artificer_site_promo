@@ -1,0 +1,93 @@
+{
+  "cdn_base": "https://raw.githubusercontent.com/japiohopman/artificer/main/",
+  "asset_directories": {
+    "site_assets": "docs/site/assets/",
+    "screenshots": "docs/screenshots/"
+  },
+  "catalog": [
+    {
+      "id": "promo_world_map_wide",
+      "path": "docs/site/assets/promo_world_map_wide.png",
+      "category": "hero",
+      "title": "World Atlas Overview",
+      "description": "Wide banner showing the interactive Leaflet-powered regional map."
+    },
+    {
+      "id": "promo_world_map_with_panels",
+      "path": "docs/site/assets/promo_world_map_with_panels.png",
+      "category": "module_preview",
+      "title": "Atlas & Reality DB Panels",
+      "description": "World map HUD showing regional details and sub-layer coordinates."
+    },
+    {
+      "id": "promo_character_profile_full",
+      "path": "docs/site/assets/promo_character_profile_full.png",
+      "category": "module_preview",
+      "title": "Vault & Inventory v2",
+      "description": "Slot-based inventory, container logistics, and character attributes."
+    },
+    {
+      "id": "promo_journal",
+      "path": "docs/site/assets/promo_journal.png",
+      "category": "module_preview",
+      "title": "AI Lore & Campaign Journal",
+      "description": "Session diary, quest logs, and AI translation bridge."
+    },
+    {
+      "id": "combat_hud_canvas_grid",
+      "path": "docs/site/assets/combat_hud_canvas_grid.png",
+      "category": "module_preview",
+      "title": "Tactical Battle Grid",
+      "description": "Canvas encounter grid with Chebyshev token collision checks."
+    },
+    {
+      "id": "promo_dice_roller",
+      "path": "docs/site/assets/promo_dice_roller.png",
+      "category": "module_preview",
+      "title": "3D Physics Dice Roller",
+      "description": "Tactile digital dice roller with mechanical audit trail."
+    },
+    {
+      "id": "promo_screenshot_three_dragon_ante",
+      "path": "docs/site/assets/promo_screenshot_three_dragon_ante.png",
+      "category": "mini_games",
+      "title": "Three Dragon Ante",
+      "description": "High-stakes tavern card game fully integrated into Arcane Codex."
+    },
+    {
+      "id": "promo_audio_generator_screen",
+      "path": "docs/site/assets/promo_audio_generator_screen.png",
+      "category": "devkit",
+      "title": "11Labs Audio Generator",
+      "description": "Synthesize narration and NPC dialogue for soundscapes."
+    },
+    {
+      "id": "game_hud",
+      "path": "docs/screenshots/game_hud.png",
+      "category": "gameplay",
+      "title": "Arcane Codex Game HUD",
+      "description": "Live application GM command desk view."
+    },
+    {
+      "id": "atlas_service",
+      "path": "docs/screenshots/atlas_service.png",
+      "category": "gameplay",
+      "title": "Atlas Service Interface",
+      "description": "Live multi-tier regional map rendering."
+    },
+    {
+      "id": "hud_chat_interface",
+      "path": "docs/screenshots/hud_chat_interface.png",
+      "category": "gameplay",
+      "title": "AI Orchestration HUD",
+      "description": "Google Gemini 1.5 Flash tool-call chat interface."
+    },
+    {
+      "id": "tactical_view",
+      "path": "docs/screenshots/tactical_view.png",
+      "category": "gameplay",
+      "title": "Tactical Battle View",
+      "description": "Encounter battle canvas and initiative tracker."
+    }
+  ]
+}
