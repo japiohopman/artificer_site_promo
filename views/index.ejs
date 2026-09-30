@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arcane Codex - All-round GM Kit</title>
+    <title>Arcane Codex - Living GM Control Room</title>
     <meta
       name="description"
       content="Arcane Codex is an independent tabletop GM kit with a living atlas, campaign journal, character vault, tactical combat, dice, audio and AI-ready orchestration."
     />
-    <meta property="og:title" content="Arcane Codex - All-round GM Kit" />
+    <meta property="og:title" content="Arcane Codex - Living GM Control Room" />
     <meta
       property="og:description"
       content="A polished campaign control room for game masters who want bigger worlds with less table chaos."
     />
     <meta property="og:image" content="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/promo_world_map_wide.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Arcane Codex - All-round GM Kit" />
+    <meta name="twitter:title" content="Arcane Codex - Living GM Control Room" />
     <meta name="twitter:description" content="A polished campaign control room for game masters who want bigger worlds with less table chaos." />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/japiohopman/artificer/main/docs/site/assets/promo_world_map_wide.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,6 +38,7 @@
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="#demo">Demo</a>
+        <a href="#stadium">Stadium</a>
         <a href="#features">Features</a>
         <a href="#devkit">GM Kit</a>
         <a href="#devlog">Progress</a>
@@ -95,12 +96,12 @@
       <section class="campaign-strip" aria-label="Campaign callout">
         <div>
           <span class="status-dot"></span>
-          <strong>Automated Verification Status: <%= productTruth.verification_summary ? productTruth.verification_summary.status : 'HEALTHY' %></strong>
+          <strong><%= productTruth.development_stadium ? productTruth.development_stadium.name : 'Stadium 3 — Beta Prototype' %> (<%= productTruth.development_stadium ? productTruth.development_stadium.mode : 'Developer Mode Active' %>)</strong>
           <span>
-            <%= productTruth.verification_summary ? productTruth.verification_summary.passing_checks : '12' %> / <%= productTruth.verification_summary ? productTruth.verification_summary.total_checks : '12' %> automated checks passing across viewports (Desktop, Tablet, Mobile).
+            Automated Verification: <%= productTruth.verification_summary ? productTruth.verification_summary.passing_checks : '12' %> / <%= productTruth.verification_summary ? productTruth.verification_summary.total_checks : '12' %> checks passing across viewports.
           </span>
         </div>
-        <a href="#devlog">View Verification Data</a>
+        <a href="#stadium">View Project Stadium</a>
       </section>
 
       <section id="demo" class="section demo-section reveal">
@@ -151,6 +152,33 @@
             <strong>Living world atlas</strong>
             <span>Map, location panels, travel context and world state in one view.</span>
           </div>
+        </div>
+      </section>
+
+      <section id="stadium" class="section use-cases-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow dark">Project Co-Growth Framework</p>
+          <h2>Living Development Stadiums</h2>
+          <p class="section-lead">Arcane Codex is evolving transparently. The promotional interface is a direct window into the current software stadium.</p>
+        </div>
+        <div class="use-case-grid">
+          <% if (productTruth.development_stadium && productTruth.development_stadium.stadiums) { %>
+            <% productTruth.development_stadium.stadiums.forEach(function(s) { %>
+              <article class="<%= s.active ? 'featured' : '' %>">
+                <span class="use-case-id">Stadium 0<%= s.id %></span>
+                <h3><%= s.name %></h3>
+                <p>
+                  <% if (s.active) { %>
+                    <strong>ACTIVE STADIUM:</strong> <%= productTruth.development_stadium.description %>
+                  <% } else if (s.id < 3) { %>
+                    Core architecture and engine foundations successfully built and verified.
+                  <% } else { %>
+                    Targeted release milestone for public demo access and community scaling.
+                  <% } %>
+                </p>
+              </article>
+            <% }); %>
+          <% } %>
         </div>
       </section>
 

@@ -10,6 +10,19 @@
       "forge": "Forge the World (DevKit & Creator Workshop)"
     }
   },
+  "development_stadium": {
+    "code": "STADIUM_BETA_PROTOTYPE",
+    "name": "Stadium 3 — Beta Prototype",
+    "mode": "Developer Mode Active",
+    "description": "Functional GM Control Desk with schema-driven Reality DB, Slot Inventory v2, Meteocons, and DevKit tools.",
+    "stadiums": [
+      {"id": 1, "name": "Pre-Alpha Architecture", "active": false},
+      {"id": 2, "name": "Alpha Sandbox Engines", "active": false},
+      {"id": 3, "name": "Beta Prototype Desk", "active": true},
+      {"id": 4, "name": "Release Candidate Demo", "active": false},
+      {"id": 5, "name": "Production Launch v1.0", "active": false}
+    ]
+  },
   "verification_summary": {
     "last_audit": "2026-08-13",
     "status": "HEALTHY",

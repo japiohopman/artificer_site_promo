@@ -36,12 +36,26 @@ function getProductTruth() {
   }
 }
 
+function getAssetCatalog() {
+  try {
+    const rawData = fs.readFileSync(path.join(__dirname, 'public', 'data', 'asset_catalog.json'), 'utf8');
+    return JSON.parse(rawData);
+  } catch (err) {
+    return { catalog: [] };
+  }
+}
+
 app.get('/', (req, res) => {
-  res.render('index', { productTruth: getProductTruth() });
+  res.render('index', {
+    productTruth: getProductTruth(),
+    assetCatalog: getAssetCatalog()
+  });
 });
 
 app.get('/api/status', (req, res) => {
-  res.json(getProductTruth());
+  const truth = getProductTruth();
+  truth.asset_catalog = getAssetCatalog();
+  res.json(truth);
 });
 
 app.post('/subscribe', async (req, res) => {
